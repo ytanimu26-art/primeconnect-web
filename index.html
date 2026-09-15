@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="theme-color" content="#0D47A1"><meta name="description" content="PrimeConnect — Fast • Secure • Reliable">
+  <title>PrimeConnect</title><link rel="icon" href="assets/yusuf_icon.png"><link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<div id="app">
+  <section id="authView" class="auth-page">
+    <div class="auth-brand"><img src="assets/yusuf_icon.png" alt="PrimeConnect"><h1>PrimeConnect</h1><p>Fast • Secure • Reliable</p></div>
+    <div class="auth-card">
+      <div class="tabs"><button class="tab active" data-auth="login">Login</button><button class="tab" data-auth="register">Create Account</button></div>
+      <form id="loginForm" class="auth-form">
+        <h2>Welcome Back</h2><p class="muted">Sign in to continue to PrimeConnect.</p>
+        <label>Email<input id="loginEmail" type="email" required autocomplete="email"></label>
+        <label>Password<div class="password-wrap"><input id="loginPassword" type="password" required autocomplete="current-password"><button type="button" class="show-pass" data-target="loginPassword">Show</button></div></label>
+        <button class="primary" type="submit">LOGIN</button><button class="link-btn" type="button" id="forgotBtn">Forgot Password?</button>
+      </form>
+      <form id="registerForm" class="auth-form hidden">
+        <h2>Create Account</h2><p class="muted">Join PrimeConnect today.</p>
+        <div class="two"><label>First name<input id="firstName" required></label><label>Surname<input id="surname" required></label></div>
+        <label>Email<input id="registerEmail" type="email" required autocomplete="email"></label>
+        <label>Phone<input id="phone" inputmode="tel" placeholder="08012345678" required></label>
+        <label>Password<div class="password-wrap"><input id="registerPassword" type="password" minlength="6" required autocomplete="new-password"><button type="button" class="show-pass" data-target="registerPassword">Show</button></div></label>
+        <button class="primary" type="submit">CREATE ACCOUNT</button>
+      </form>
+      <div id="authMessage" class="message"></div>
+    </div>
+  </section>
+
+  <section id="dashboardView" class="hidden">
+    <header class="topbar"><div class="brand"><img src="assets/yusuf_icon.png"><div><b>PrimeConnect</b><small>Fast • Secure • Reliable</small></div></div><div class="top-actions"><button id="refreshBtn">↻</button><button id="infoBtn">ⓘ</button><button id="logoutBtn" class="logout">Logout</button></div></header>
+    <main class="container">
+      <section class="welcome"><div><span>Welcome Back</span><h2 id="userName">Customer 👋</h2></div></section>
+      <section class="wallet-card"><div><span>Wallet Balance</span><strong id="balance">₦0.00</strong></div><button id="toggleBalance">◉</button><div class="wallet-bottom"><div><small>Referral Bonus</small><b id="referral">₦0.00</b></div><button id="fundBtn">FUND WALLET</button></div></section>
+      <section class="card virtual"><h3>💳 Virtual Account</h3><button id="createAccountBtn" class="primary">CREATE VIRTUAL ACCOUNT</button><div class="account-grid"><div><small>Bank Name</small><b id="bankName">Not available</b></div><div><small>Account Name</small><b id="accountName">Not available</b></div><div><small>Account Number</small><b id="accountNumber">Not available</b></div></div></section>
+      <section><div class="section-title"><h3>Services</h3></div><div class="service-grid">
+        <button class="service" data-service="airtime"><span>📱</span><b>Airtime</b><small>Buy airtime</small></button>
+        <button class="service" data-service="data"><span>🌐</span><b>Data</b><small>Buy data bundles</small></button>
+        <button class="service" data-service="history"><span>🧾</span><b>History</b><small>Transactions</small></button>
+        <button class="service" data-service="profile"><span>👤</span><b>Profile</b><small>Your account</small></button>
+      </div></section>
+      <section id="servicePanel" class="card service-panel hidden"></section>
+    </main>
+    <nav class="bottom-nav"><button class="active" data-nav="home">⌂<span>Home</span></button><button data-nav="services">◉<span>Services</span></button><button data-nav="history">▤<span>History</span></button><button data-nav="profile">●<span>Profile</span></button></nav>
+  </section>
+</div>
+<div id="toast"></div>
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script><script src="js/app.js"></script>
+</body></html>
